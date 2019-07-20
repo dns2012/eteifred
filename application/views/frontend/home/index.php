@@ -87,13 +87,13 @@
                                     <div class="properties-description">
                                         <ul class="tags">
                                             <li>
-                                                <a href="javascript:void(0);">
-                                                    Alnoor Garments
+                                                <a href="<?=site_url('product/category/'.$product->category_id.'/'.url_title(strtolower($product->category)))?>">
+                                                    <?=strtoupper($product->category)?>
                                                 </a>
                                             </li>
                                         </ul>
                                         <h3>
-                                            <a href="<?=site_url('product/detail/'.$product->id.'/'.url_title(strtolower($product->name)))?>">
+                                            <a href="<?=site_url('product/category/'.$product->category_id.'/'.url_title(strtolower($product->category)))?>">
                                                 <?=$product->name?>
                                             </a>
                                         </h3>

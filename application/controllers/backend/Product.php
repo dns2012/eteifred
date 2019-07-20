@@ -8,6 +8,7 @@ class Product extends CI_Controller {
             redirect("admin");
         }
         $this->load->model("ModelProduct");
+        $this->load->model("ModelCategory");
     }
 
     public function index() {
@@ -19,6 +20,7 @@ class Product extends CI_Controller {
     public function form($id=0) {
         $data["page"] = "product";
         $data["id"] = $id;
+        $data["category"] = $this->ModelCategory->getAll();
         if(!empty($id)) {
             $data["product"] = $this->ModelProduct->getById($id);
             if(empty($data["product"])) {
@@ -43,6 +45,7 @@ class Product extends CI_Controller {
         }
         if($id == 0) {
             $array = array(
+                "category_id" => $post["category"],
                 "name"  =>  $post["name"],
                 "description" =>  $post["description"],
                 "image" => $image_name,
@@ -52,6 +55,7 @@ class Product extends CI_Controller {
             $this->ModelProduct->add($array);
         } else {
             $array = array(
+                "category_id" => $post["category"],
                 "name"  =>  $post["name"],
                 "description" =>  $post["description"],
                 "image" => $image_name,

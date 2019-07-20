@@ -7,9 +7,9 @@
                 <div class="card mb-3">
                     <div class="card-header d-flex justify-content-between border-bottom-0">
                         <h5 class="mb-0">
-                            PRODUCT
+                            CATEGORY
                         </h5>
-                        <a href="<?=site_url('admin/product/form/0')?>" class="btn btn-xs btn-primary">
+                        <a href="<?=site_url('admin/category/form/0')?>" class="btn btn-xs btn-primary">
                             <i class="fas fa-plus"></i> INSERT
                         </a>
                     </div>
@@ -20,20 +20,18 @@
                             <tr>
                                 <th class="text-left">#</th>
                                 <th class="text-left">Name</th>
-                                <th class="text-left">Category</th>
                                 <th class="text-left">Description</th>
                                 <th class="text-left"></th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($product as $index => $product): ?>
+                        <?php foreach($category as $index => $category): ?>
                             <tr>
                                 <td class="text-left"><?=$index+1?></td>
-                                <td class="text-left"><?=$product->name?></td>
-                                <td class="text-left"><?=$product->category?></td>
-                                <td class="text-left"><?=$product->description?></td>
+                                <td class="text-left"><?=$category->name?></td>
+                                <td class="text-left"><?=$category->description?></td>
                                 <td class="text-right">
-                                    <a href="<?=site_url('admin/product/form/'.$product->id)?>" class="btn btn-default btn-xs border-radius-6">
+                                    <a href="<?=site_url('admin/category/form/'.$category->id)?>" class="btn btn-default btn-xs border-radius-6">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <button type="button" class="btn btn-danger btn-xs border-radius-6 ml-1" data-toggle="modal" data-target="#deleteModal<?=$index?>">
@@ -55,7 +53,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
-                                            <a href="<?=site_url('admin/product/delete/'.$product->id)?>" class="btn btn-primary">
+                                            <a href="<?=site_url('admin/category/delete/'.$category->id)?>" class="btn btn-primary">
                                                 DELETE
                                             </a>
                                         </div>

@@ -49,6 +49,15 @@
                                         <label for="">Name</label>
                                         <input type="text" name="name" id="" class="form-control" placeholder="" required value="<?=(!empty($product))?$product->name:''?>">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">Category</label>
+                                        <select class="form-control select2" name="category" id="" required>
+                                            <option value="">--</option>
+                                            <?php foreach($category as $category) : ?>
+                                                <option value="<?=$category->id?>" <?=(!empty($product)?($product->category_id==$category->id)?'selected':'':'')?>><?=$category->name?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">

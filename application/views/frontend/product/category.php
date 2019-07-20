@@ -5,7 +5,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10 align-self-center text-center">
                         <h1 class="title">
-                            ALNOOR GARMENTS PRODUCTS
+                            <?=$category->name?>
                         </h1>
                         <h6 class="subtitle">
                             <!-- We are Small Team of Creative People working together -->

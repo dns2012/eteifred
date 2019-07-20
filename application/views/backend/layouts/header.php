@@ -155,13 +155,29 @@
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item <?=($page=='product')?'active':''?>">
-                        <a class="nav-link" href="<?=site_url('admin/product')?>">
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#food-menu" aria-expanded="false" aria-controls="food-menu">
                             <i class="fab fa-dropbox"></i>
                             <span class="menu-title">
                                 Product
                             </span>
                         </a>
+                        <div class="collapse <?=($page=='category'||$page=='product')?'show':''?>" id="food-menu">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item <?=($page=='category')?'active':''?>">
+                                    <a class="nav-link" href="<?=site_url('admin/category')?>">
+                                        <i class="fas fa-tags"></i>
+                                        Category
+                                    </a>
+                                </li>
+                                <li class="nav-item <?=($page=='product')?'active':''?>">
+                                    <a class="nav-link" href="<?=site_url('admin/product')?>">
+                                        <i class="fas fa-list"></i>
+                                        Product
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item <?=($page=='service')?'active':''?>">
                         <a class="nav-link" href="<?=site_url('admin/service')?>">
