@@ -100,14 +100,14 @@
                                         <div class="location">
                                         <?=word_limiter($product->description, 10)?>
                                         </div>
-                                        <div class="price-area">
+                                        <!-- <div class="price-area">
                                             <div class="read-more">
                                                 <a href="<?=site_url('product/detail/'.$product->id.'/'.url_title(strtolower($product->name)))?>" class="btn-price">
                                                     SHOP NOW
                                                 </a>
                                             </div>
                                             <div class="price"></div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
