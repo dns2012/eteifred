@@ -37,17 +37,17 @@
     <link rel="stylesheet" href="<?=$css?>theme.css">
     <!-- End Source CSS We Use -->
 
-    <link rel="canonical" href="http://alfianimanuddin.com/index.html">
+    <link rel="canonical" href="<?=site_url('/')?>">
 </head>
 <body>
     <div class="container-admin">
         <!-- NAVBAR -->
         <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-                <a href="index.html" class="navbar-brand brand-logo">
+                <a href="<?=site_url('admin/dashboard')?>" class="navbar-brand brand-logo">
                     <img src="<?=$image?>logo.svg" alt="">
                 </a>
-                <a href="index.html" class="navbar-brand brand-logo-mini">
+                <a href="<?=site_url('admin/dashboard')?>" class="navbar-brand brand-logo-mini">
                     <img src="<?=$image?>logo-square.svg" alt="">
                 </a>
             </div>
