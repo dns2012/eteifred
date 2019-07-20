@@ -19,6 +19,66 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-9">
+                    <div class="statistic">
+                            <div class="row">
+                                <div class="col-12 col-lg-3">
+                                    <div class="statistic-list">
+                                        <div class="icon">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                        <h4>
+                                            200
+                                        </h4>
+                                        <p>
+                                            Workers Employed
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <div class="statistic-list">
+                                        <div class="icon">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                        <h4>
+                                            200
+                                        </h4>
+                                        <p>
+                                            Workers Employed
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <div class="statistic-list">
+                                        <div class="icon">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                        <h4>
+                                            200
+                                        </h4>
+                                        <p>
+                                            Workers Employed
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <div class="statistic-list">
+                                        <div class="icon">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                        <h4>
+                                            200
+                                        </h4>
+                                        <p>
+                                            Workers Employed
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
                         <?=$about->about?>
                     </div>
                 </div>
