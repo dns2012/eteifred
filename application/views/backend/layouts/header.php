@@ -9,6 +9,7 @@
     $cdnService = $this->config->item("cdnServiceBackend");
     $cdnTestimonial = $this->config->item("cdnTestimonialBackend");
     $cdnGallery = $this->config->item("cdnGalleryBackend");
+    $cdnLogo = $this->config->item("cdnLogoBackend");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +97,7 @@
                             <a href="<?=site_url('admin/self/'.$this->session->userdata("userId"))?>" class="dropdown-item mt-2">
                                 Manage Accounts
                             </a>
-                            <a href="#" class="dropdown-item">
+                            <a href="<?=site_url('admin/self/password/'.$this->session->userdata("userId"))?>" class="dropdown-item">
                                 Change Password
                             </a>
                             <a href="<?=site_url('admin/logout')?>" class="dropdown-item">
@@ -162,6 +163,14 @@
                             </span>
                         </a>
                     </li>
+                    <li class="nav-item <?=($page=='service')?'active':''?>">
+                        <a class="nav-link" href="<?=site_url('admin/service')?>">
+                            <i class="fas fa-rocket"></i>
+                            <span class="menu-title">
+                                Service
+                            </span>
+                        </a>
+                    </li>
                     <li class="nav-item d-none d-md-block">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#food-menu" aria-expanded="false" aria-controls="food-menu">
                             <i class="fas fa-images"></i>
@@ -191,6 +200,14 @@
                             <i class="fas fa-quote-left"></i>
                             <span class="menu-title">
                                 Testimonial
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item <?=($page=='message')?'active':''?>">
+                        <a class="nav-link" href="<?=site_url('admin/message')?>">
+                            <i class="fas fa-envelope"></i>
+                            <span class="menu-title">
+                                Message
                             </span>
                         </a>
                     </li>

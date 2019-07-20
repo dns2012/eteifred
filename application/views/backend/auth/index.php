@@ -46,10 +46,10 @@
                             <?php ;} ?>
                             <form action="<?=site_url('admin/login')?>" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="email" id=""  placeholder="Email" required value="dnsprogress@gmail.com">
+                                    <input type="text" class="form-control" name="email" id=""  placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="password" id=""  placeholder="Password" required value="acception">
+                                    <input type="password" class="form-control" name="password" id=""  placeholder="Password" required>
                                 </div>
                                 <button class="btn btn-block btn-primary" type="submit">
                                     Login

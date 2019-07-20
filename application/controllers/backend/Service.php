@@ -8,11 +8,13 @@ class Service extends CI_Controller {
             redirect("admin");
         }
         $this->load->model("ModelService");
+        $this->load->model("ModelServiceScheme");
     }
 
     public function index() {
         $data["page"] = "service";
         $data["service"] = $this->ModelService->getAll();
+        $data["scheme"] = $this->ModelServiceScheme->getById(0);
         $this->load->view("backend/service/index", $data);
     }
 
@@ -32,7 +34,7 @@ class Service extends CI_Controller {
         $post = $this->security->xss_clean($this->input->post());
         if(!empty($_FILES['image']['name'])){
             $time = time();
-            $image_name =  $time.$_FILES['image']['name'];
+            $image_name =  $time.str_replace(' ', '', $_FILES['image']['name']);
             $config['upload_path'] 		= $this->config->item('uploadServiceBackend');
             $config['allowed_types'] 	= 'gif|jpg|png|jpeg';
             $config['file_name'] 		= $image_name;
@@ -64,6 +66,27 @@ class Service extends CI_Controller {
 
     public function delete($id=0) {
         $this->ModelService->delete($id);
+        redirect("admin/service");
+    }
+
+    public function formActionScheme($id=0) {
+        $post = $this->security->xss_clean($this->input->post());
+        if(!empty($_FILES['image']['name'])){
+            $time = time();
+            $image_name =  $time.str_replace(' ', '', $_FILES['image']['name']);
+            $config['upload_path'] 		= $this->config->item('uploadServiceBackend');
+            $config['allowed_types'] 	= 'gif|jpg|png|jpeg';
+            $config['file_name'] 		= $image_name;
+            $this->upload->initialize($config);
+            $this->upload->do_upload('image');
+        }else{
+            $image_name = $post['image'];
+        }
+        $array = array(
+            "image" => $image_name,
+            "updated_at" => date("Y-m-d H:i:s")
+        );
+        $this->ModelServiceScheme->update($array, $id);
         redirect("admin/service");
     }
 }

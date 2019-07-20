@@ -32,7 +32,7 @@ class Product extends CI_Controller {
         $post = $this->security->xss_clean($this->input->post());
         if(!empty($_FILES['image']['name'])){
             $time = time();
-            $image_name =  $time.$_FILES['image']['name'];
+            $image_name =  $time.str_replace(' ', '', $_FILES['image']['name']);
             $config['upload_path'] 		= $this->config->item('uploadProductBackend');
             $config['allowed_types'] 	= 'gif|jpg|png|jpeg';
             $config['file_name'] 		= $image_name;

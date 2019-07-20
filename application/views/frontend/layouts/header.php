@@ -6,8 +6,10 @@
     $cdnAdmin = $this->config->item("cdnAdminBackend");
     $cdnBanner = $this->config->item("cdnBannerBackend");
     $cdnProduct = $this->config->item("cdnProductBackend");
+    $cdnService = $this->config->item("cdnServiceBackend");
     $cdnTestimonial = $this->config->item("cdnTestimonialBackend");
     $cdnGallery = $this->config->item("cdnGalleryBackend");
+    $cdnLogo = $this->config->item("cdnLogoBackend");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,15 +35,15 @@
 
     <link rel='shortcut icon' type='image/png' href='<?=$image?>favicon.png' />
     <!-- <link rel='shortcut icon' type='image/x-icon' href='<?=$image?>favicon.ico' /> -->
-    <link rel="canonical" href="http://alnoorgarments.com/index.html">
+    <link rel="canonical" href="<?=site_url('/')?>">
 </head>
 <body>
     <header class="header_area">
         <nav class="navbar navbar-expand-lg menu_one menu_four">
             <div class="container">
                 <a class="navbar-brand sticky_logo" href="<?=site_url('/')?>">
-                    <img src="<?=$image?>logo.png" srcset="<?=$image?>logo.png 2x" alt="logo">
-                    <img src="<?=$image?>logo.png" srcset="<?=$image?>logo.png 2x" alt="">
+                    <img src="<?=$cdnLogo.$information->logo?>" srcset="<?=$cdnLogo.$information->logo?>" alt="logo">
+                    <img src="<?=$cdnLogo.$information->logo?>" srcset="<?=$cdnLogo.$information->logo?>" alt="">
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,8 +77,8 @@
                                 Products
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="services.html">
+                        <li class="nav-item <?=($page=='service')?'active':''?>">
+                            <a class="nav-link" href="<?=site_url('service')?>">
                                 Services
                             </a>
                         </li>
@@ -87,7 +89,7 @@
                         </li>
                     </ul>
                 </div>
-                <a class="btn btn_get btn_hover hidden-sm hidden-xs" href="contact.html">
+                <a class="btn btn_get btn_hover hidden-sm hidden-xs" href="<?=site_url('contact')?>">
                     Contact Us
                 </a>
             </div>

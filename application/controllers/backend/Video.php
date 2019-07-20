@@ -32,7 +32,7 @@ class Video extends CI_Controller {
         $post = $this->security->xss_clean($this->input->post());
         if(!empty($_FILES['object']['name'])){
             $time = time();
-            $object_name =  $time.$_FILES['object']['name'];
+            $object_name =  $time.str_replace(' ', '', $_FILES['object']['name']);
             $config['upload_path'] 		= $this->config->item('uploadGalleryBackend');
             $config['allowed_types'] 	= 'mp4|mkv|3gp|avi|mpg|webm|wmv';
             $config['file_name'] 		= $object_name;
@@ -43,7 +43,7 @@ class Video extends CI_Controller {
         }
         if(!empty($_FILES['image']['name'])){
             $time = time();
-            $image_name =  $time.$_FILES['image']['name'];
+            $image_name =  $time.str_replace(' ', '', $_FILES['image']['name']);
             $config['upload_path'] 		= $this->config->item('uploadGalleryBackend');
             $config['allowed_types'] 	= 'gif|jpg|png|jpeg';
             $config['file_name'] 		= $image_name;

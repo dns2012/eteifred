@@ -22,6 +22,17 @@ class Information extends CI_Controller {
 
     public function formAction($id=0) {
         $post = $this->security->xss_clean($this->input->post());
+        if(!empty($_FILES['image']['name'])){
+            $time = time();
+            $image_name =  $time.str_replace(' ', '', $_FILES['image']['name']);
+            $config['upload_path'] 		= $this->config->item('uploadLogoBackend');
+            $config['allowed_types'] 	= 'gif|jpg|png|jpeg';
+            $config['file_name'] 		= $image_name;
+            $this->upload->initialize($config);
+            $this->upload->do_upload('image');
+        }else{
+            $image_name = $post['image'];
+        }
         $array = array(
             "tagline"  =>  $post["tagline"],
             "facebook" => $post["facebook"],
@@ -33,6 +44,7 @@ class Information extends CI_Controller {
             "fax" => $post["fax"],
             "email" => $post["email"],
             "maps" => $post["maps"],
+            "logo" => $image_name,
             "updated_at" => date("Y-m-d H:i:s")
         );
         $this->ModelInformation->update($array, $id);

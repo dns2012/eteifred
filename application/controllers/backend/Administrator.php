@@ -98,7 +98,7 @@ class Administrator extends CI_Controller {
         $post = $this->security->xss_clean($this->input->post());
         if(!empty($_FILES['image']['name'])){
             $time = time();
-            $image_name =  $time.$_FILES['image']['name'];
+            $image_name =  $time.str_replace(' ', '', $_FILES['image']['name']);
             $config['upload_path'] 		= $this->config->item('uploadAdminBackend');
             $config['allowed_types'] 	= 'gif|jpg|png|jpeg';
             $config['file_name'] 		= $image_name;
@@ -122,5 +122,52 @@ class Administrator extends CI_Controller {
         );
         $this->session->set_userdata($arraySession);
         redirect($_SERVER['HTTP_REFERER']);
+    }
+
+    public function formSelfPassword($id=0) {
+        $data["page"] = "admin";
+        $data["id"] = $id;
+        if(!empty($id)) {
+            if($this->session->userdata("userId") != $id) {
+                redirect("admin/dashboard");
+            } else {
+                $data["admin"] = $this->ModelAdministrator->getById($id);
+                if(empty($data["admin"])) {
+                    redirect("admin/dashboard");
+                }
+            }
+        }
+        $this->load->view("backend/administrator/formSelfPassword", $data);
+    }
+
+    public function formSelfPasswordAction($id=0) {
+        $post = $this->security->xss_clean($this->input->post());
+        $checkUser = $this->ModelAdministrator->getById($id);
+        if(!empty($checkUser)) {
+            $old = $post["old"];
+            $new = password_hash($post["new"], PASSWORD_DEFAULT);
+            if (password_verify($post["old"], $checkUser->password)) {
+                $array = array(
+                    "password"  =>  $new,
+                );
+                $this->ModelAdministrator->update($array, $id);
+                $this->session->sess_destroy();
+                redirect("admin");
+            } else {
+                $this->session->set_flashdata("warning", "Old password is wrong");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        } else {
+            redirect("admin/dashboard");
+        }
+        // $array = array(
+        //     "name"  =>  $post["name"],
+        //     "email" =>  $post["email"],
+        //     "image" => $image_name,
+        //     "description" => $post["description"],
+        //     "updated_at" => date("Y-m-d H:i:s")
+        // );
+        // $this->ModelAdministrator->update($array, $id);
+        // redirect($_SERVER['HTTP_REFERER']);
     }
 }

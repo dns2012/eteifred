@@ -1,5 +1,5 @@
 <?php 
-class Image extends CI_Controller {
+class Message extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
@@ -7,25 +7,25 @@ class Image extends CI_Controller {
             $this->session->set_flashdata("warning", "You must login first");
             redirect("admin");
         }
-        $this->load->model("ModelGallery");
+        $this->load->model("ModelMessage");
     }
 
     public function index() {
-        $data["page"] = "image";
-        $data["gallery"] = $this->ModelGallery->getByType(1);
-        $this->load->view("backend/image/index", $data);
+        $data["page"] = "message";
+        $data["message"] = $this->ModelMessage->getAll();
+        $this->load->view("backend/message/index", $data);
     }
 
     public function form($id=0) {
-        $data["page"] = "image";
+        $data["page"] = "message";
         $data["id"] = $id;
         if(!empty($id)) {
-            $data["gallery"] = $this->ModelGallery->getById($id);
-            if(empty($data["gallery"])) {
-                redirect("admin/gallery/image");
+            $data["message"] = $this->ModelMessage->getById($id);
+            if(empty($data["message"])) {
+                redirect("admin/message");
             }
         }
-        $this->load->view("backend/image/form", $data);
+        $this->load->view("backend/message/form", $data);
     }
 
     public function formAction($id=0) {
@@ -33,7 +33,7 @@ class Image extends CI_Controller {
         if(!empty($_FILES['image']['name'])){
             $time = time();
             $image_name =  $time.str_replace(' ', '', $_FILES['image']['name']);
-            $config['upload_path'] 		= $this->config->item('uploadGalleryBackend');
+            $config['upload_path'] 		= $this->config->item('uploadMessageBackend');
             $config['allowed_types'] 	= 'gif|jpg|png|jpeg';
             $config['file_name'] 		= $image_name;
             $this->upload->initialize($config);
@@ -43,27 +43,27 @@ class Image extends CI_Controller {
         }
         if($id == 0) {
             $array = array(
-                "type"  =>  1,
-                "object" =>  $image_name,
-                "caption" => $post["caption"],
-                "thumbnail" => "",
+                "name"  =>  $post["name"],
+                "description" =>  $post["description"],
+                "image" => $image_name,
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s")
             );
-            $this->ModelGallery->add($array);
+            $this->ModelMessage->add($array);
         } else {
             $array = array(
-                "object" =>  $image_name,
-                "caption" => $post["caption"],
+                "name"  =>  $post["name"],
+                "description" =>  $post["description"],
+                "image" => $image_name,
                 "updated_at" => date("Y-m-d H:i:s")
             );
-            $this->ModelGallery->update($array, $id);
+            $this->ModelMessage->update($array, $id);
         }
-        redirect("admin/gallery/image");
+        redirect("admin/message");
     }
 
     public function delete($id=0) {
-        $this->ModelGallery->delete($id);
-        redirect("admin/gallery/image");
+        $this->ModelMessage->delete($id);
+        redirect("admin/message");
     }
 }

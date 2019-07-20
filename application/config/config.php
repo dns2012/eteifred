@@ -45,6 +45,8 @@ $config['cdnTestimonialBackend'] = $config['base_url'].'public/testimonial/';
 $config['uploadTestimonialBackend'] = FCPATH.'public/testimonial/';
 $config['cdnGalleryBackend'] = $config['base_url'].'public/gallery/';
 $config['uploadGalleryBackend'] = FCPATH.'public/gallery/';
+$config['cdnLogoBackend'] = $config['base_url'].'public/logo/';
+$config['uploadLogoBackend'] = FCPATH.'public/logo/';
 
 $config['cssFrontend'] = $config['base_url'].'assets/frontend/css/';
 $config['jsFrontend'] = $config['base_url'].'assets/frontend/js/';

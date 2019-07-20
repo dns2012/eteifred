@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4 px-lg-4">
                     <div class="footer-description">
-                        <img src="<?=$image?>logo.png" alt="" class="img-fluid">
+                        <img src="<?=$cdnLogo.$information->logo?>" alt="" class="img-fluid">
                         <?=$information->tagline?>
                     </div>
                     <div class="social">
@@ -31,17 +31,17 @@
                         <div class="col-6">
                             <ul class="link">
                                 <li>
-                                    <a href="index.html">
+                                    <a href="<?=site_url('/')?>">
                                         Home
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="about.html">
+                                    <a href="<?=site_url('about')?>">
                                         About
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="products.html">
+                                    <a href="<?=site_url('product')?>">
                                         Products
                                     </a>
                                 </li>
@@ -50,17 +50,17 @@
                         <div class="col-6">
                             <ul class="link">
                                 <li>
-                                    <a href="services.html">
+                                    <a href="<?=site_url('service')?>">
                                         Services
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="gallery.html">
+                                    <a href="<?=site_url('gallery')?>">
                                         Gallery
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">
+                                    <a href="<?=site_url('contact')?>">
                                         Contact Us
                                     </a>
                                 </li>

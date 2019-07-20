@@ -66,6 +66,18 @@
                                         <label for="">Google Map Link</label>
                                         <textarea class="form-control" name="maps" id=""><?=(!empty($information))?$information->maps:''?></textarea>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">Logo</label>
+                                        <?php if(!empty($information->logo)) { ?>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-12 col-md-3">
+                                                    <img src="<?=$cdnLogo.$information->logo?>" style="width: 100%; height: 160px" alt="">
+                                                </div>
+                                            </div>
+                                        <?php ;} ?>
+                                        <input type="file" class="form-control" name="image"/>
+                                        <input type="hidden" name="image" value="<?=$information->logo?>">
+                                    </div>
                                 </div>
                             </div>
                         </form>

@@ -19,17 +19,19 @@
                         <h5 class="mb-0">
                             SERVICE SCHEME
                         </h5>
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-12">
-                                <img src="http://localhost/html/alnoor-garments/assets/img/services.jpg" class="w-100">
+                        <form action="<?=site_url('admin/service/scheme/form/action/0')?>" method="post" enctype="multipart/form-data">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg-12">
+                                    <img src="<?=$cdnService.$scheme->image?>" class="w-100">
+                                </div>
+                                <div class="col-12 col-md-8 col-lg-8" style="margin-top: 5px">
+                                    <input type="file" name="image" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-4" style="margin-top: 5px">
+                                    <button type="submit" class="btn btn-primary" style="width: 100%">SAVE SCHEME</button>
+                                </div>
                             </div>
-                            <div class="col-12 col-md-8 col-lg-8" style="margin-top: 5px">
-                                <input type="file" name="image" class="form-control">
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-4" style="margin-top: 5px">
-                                <button class="btn btn-primary" style="width: 100%">SAVE SCHEME</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="card">
