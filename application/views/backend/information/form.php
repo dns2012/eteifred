@@ -66,6 +66,7 @@
                                         <label for="">Google Map Link</label>
                                         <textarea class="form-control" name="maps" id=""><?=(!empty($information))?$information->maps:''?></textarea>
                                     </div>
+                                    <?php /*
                                     <div class="form-group">
                                         <label for="">Logo</label>
                                         <?php if(!empty($information->logo)) { ?>
@@ -78,6 +79,7 @@
                                         <input type="file" class="form-control" name="image"/>
                                         <input type="hidden" name="image" value="<?=$information->logo?>">
                                     </div>
+                                    */ ?>
                                 </div>
                             </div>
                         </form>

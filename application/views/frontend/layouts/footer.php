@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4 px-lg-4">
                     <div class="footer-description">
-                        <img src="<?=$cdnLogo.$information->logo?>" alt="" class="img-fluid">
+                        <img src="<?=$image?>LogoAlNoor.png" alt="" class="img-fluid">
                         <?=$information->tagline?>
                     </div>
                     <div class="social">

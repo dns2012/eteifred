@@ -42,8 +42,8 @@
         <nav class="navbar navbar-expand-lg menu_one menu_four">
             <div class="container">
                 <a class="navbar-brand sticky_logo" href="<?=site_url('/')?>">
-                    <img src="<?=$cdnLogo.$information->logo?>" srcset="<?=$cdnLogo.$information->logo?>" alt="logo">
-                    <img src="<?=$cdnLogo.$information->logo?>" srcset="<?=$cdnLogo.$information->logo?>" alt="">
+                    <img src="<?=$image?>LogoAlNoor-white.png" srcset="<?=$image?>LogoAlNoor-white.png 2x" alt="logo">
+                    <img src="<?=$image?>LogoAlNoor.png" srcset="<?=$image?>LogoAlNoor.png 2x" alt="">
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
