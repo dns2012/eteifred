@@ -43,7 +43,7 @@ class Information extends CI_Controller {
             "phone_two" => $post["phone_two"],
             "fax" => $post["fax"],
             "email" => $post["email"],
-            "maps" => $post["maps"],
+            "maps" => $this->input->post("maps"),
             "updated_at" => date("Y-m-d H:i:s")
         );
         $this->ModelInformation->update($array, $id);

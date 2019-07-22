@@ -1,4 +1,9 @@
 <?php include_once dirname(__FILE__).'/../layouts/header.php';?>
+    <style>
+        iframe {
+            width : 100% !important;
+        }
+    </style>
     <main>
         <div class="banner-6" style="background-image : url(<?=$cdnBanner.$banner[0]->image?>)">
             <div class="container">
@@ -105,7 +110,7 @@
                 </div>
             </div>
         </section>
-
-        <iframe src="<?=$information->maps?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <?=$information->maps?>
+        <!-- <iframe src="<?=$information->maps?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
     </main>
 <?php include_once dirname(__FILE__).'/../layouts/footer.php';?>
