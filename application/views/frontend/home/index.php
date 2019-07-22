@@ -37,7 +37,8 @@
                             </h1>
                         </div>
                         <div class="about-description mb-lg-5">
-                           <?=word_limiter($about->about, 50)?> <a href="<?=site_url('about')?>">Read More</a>
+                            <?=$about->about?>
+                            <?php /* <?=word_limiter($about->about, 50)?> <a href="<?=site_url('about')?>">Read More</a> */ ?>
                         </div>
                     </div>
                 </div>
@@ -279,7 +280,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="testimonial-1">
+                        <div class="section-title">
+                            <h1 class="mb-0">
+                                <div class="section-title">
+                                    <div class="title">
+                                        <span>Alnoor Garments </span> Testimonial
+                                    </div>
+                                    <div class="separate">
+                                        <i class="fas fa-boxes"></i>
+                                    </div>
+                                </div>
+                            </h1>
+                        </div>
+                        <div class="testimonial-1" style="padding-top: 0px">
                             <div class="container nav-container">
                                 <div class="testimonial-slider owl-carousel" id="testimonial-slider">
                                     <?php foreach($testimonial as $testimonial) : ?>
