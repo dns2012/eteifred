@@ -63,7 +63,7 @@
                                         <input type="email" name="email" id="" class="form-control" placeholder="" value="<?=(!empty($information))?$information->email:''?>">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Google Map Link</label>
+                                        <label for="">Google Map Link (Embed Link)</label>
                                         <textarea class="form-control" name="maps" id=""><?=(!empty($information))?$information->maps:''?></textarea>
                                     </div>
                                     <?php /*
