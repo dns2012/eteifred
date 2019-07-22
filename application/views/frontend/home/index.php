@@ -284,7 +284,7 @@
                             <h1 class="mb-0">
                                 <div class="section-title">
                                     <div class="title">
-                                        <span>Alnoor Garments </span> Testimonial
+                                        <span>Alnoor Garments </span> Testimonials
                                     </div>
                                     <div class="separate">
                                         <i class="fas fa-boxes"></i>
