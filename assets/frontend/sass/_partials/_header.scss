@@ -10,7 +10,7 @@
     position: fixed;
     width: 100%;
     left: 0;
-    z-index: 999999999;
+    z-index: 9999;
     top: 0;
     font-family: $pop;
     @include device(mobile){
@@ -686,6 +686,12 @@
             color: #fff;
             text-transform: uppercase;
             font-size: 14px;
+            @include device(tablet){
+                color: #000;
+            }
+            @include device(mobile){
+                color: #000;
+            }
             &:before{
                 background: $primary;
                 @include device(mobile){

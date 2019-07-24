@@ -40,6 +40,7 @@ backToTop.click(function () {
 });
 
 $('#slider-1').owlCarousel({
+    autoplay:true,
     loop: true,
     margin: 0,
     nav: true,
@@ -59,6 +60,7 @@ $('#slider-1').owlCarousel({
 });
 
 $('#products').owlCarousel({
+    autoplay:true,
     loop: true,
     margin: 20,
     nav: false,
@@ -79,6 +81,7 @@ $('#products').owlCarousel({
 });
 
 $('#testimonial-slider').owlCarousel({
+    autoplay:true,
     loop: true,
     margin: 10,
     nav: true,

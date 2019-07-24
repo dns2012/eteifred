@@ -51,12 +51,12 @@
             h2{
                 display: inline-block;
                 color: #ffffff;
-                // font-weight: 400;
+                font-weight: 700;
                 font-size: 75px;
                 padding: 20px;
                 text-transform: capitalize;
                 margin: 0;
-                font-family: $yesteryear;
+                // font-family: $yesteryear;
                 @include device(mobile){
                     font-size: 30px;
                 }
