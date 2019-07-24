@@ -10,6 +10,7 @@
     $cdnTestimonial = $this->config->item("cdnTestimonialBackend");
     $cdnGallery = $this->config->item("cdnGalleryBackend");
     $cdnLogo = $this->config->item("cdnLogoBackend");
+    $cdnAbout = $this->config->item("cdnAboutBackend");
 ?>
 <!DOCTYPE html>
 <html lang="en">
