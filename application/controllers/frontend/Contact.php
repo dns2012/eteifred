@@ -24,6 +24,7 @@ class Contact extends CI_Controller {
             "created_at" => date("Y-m-d H:i:s")
         );
         $this->ModelMessage->add($array);
+        redirect("contact/thanks");
     }
 
     public function thanks() {
