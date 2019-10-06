@@ -78,9 +78,9 @@
                         <div class="list-contact">
                             <i class="fas fa-phone"></i> <span><?=$information->phone_one?></span>
                         </div>
-                        <div class="list-contact">
+                        <!-- <div class="list-contact">
                             <i class="fas fa-phone"></i> <span><?=$information->phone_two?></span>
-                        </div>
+                        </div> -->
                         <div class="list-contact">
                             <i class="fas fa-envelope"></i> <span><?=$information->email?></span>
                         </div>

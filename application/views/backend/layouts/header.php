@@ -75,7 +75,7 @@
                         <a class="nav-link dropdown-toggle no-carret" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                             <div class="dropdown-toggle-wrapper">
                                 <div class="inner">
-                                    <img class="img-xs rounded-circle" src="<?=$cdnAdmin.$this->session->userdata("image")?>" alt="Profile image">
+                                    <img class="img-xs rounded-circle" src="<?=$cdnAdmin.$this->session->userdata("image")?>" alt="Profile image" style="object-fit: cover; object-position: top;">
                                 </div>
                                 <div class="inner">
                                     <div class="inner">
@@ -117,7 +117,7 @@
             <nav class="sidebar sidebar-offcanvas sidebar-dark" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item nav-profile">
-                        <img src="<?=$cdnAdmin.$this->session->userdata("image")?>" alt="profile image">
+                        <img src="<?=$cdnAdmin.$this->session->userdata("image")?>" alt="profile image" style="width: 125px; height: 125px; max-width: 125px; object-fit: cover; object-position: top;">
                         <p class="text-center font-weight-medium">
                             <?=$this->session->userdata("name");?>
                         </p>

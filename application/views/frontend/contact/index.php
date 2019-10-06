@@ -39,7 +39,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-3">
+                                <!-- <div class="col-12 col-lg-3">
                                     <div class="statistic-list">
                                         <div class="icon">
                                             <i class="fas fa-fax"></i>
@@ -51,7 +51,7 @@
                                             <?=$information->fax?>
                                         </p>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-12 col-lg-3">
                                     <div class="statistic-list">
                                         <div class="icon">

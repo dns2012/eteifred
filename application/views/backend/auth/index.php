@@ -38,12 +38,13 @@
             <div class="login-area">
                 <div class="container-fluid">
                     <div class="row justify-content-center align-items-center" style="height: 100vh;">
-                        <div class="col-12 col-md-3 text-center">
+                        <div class="col-12 col-md-4 text-center">
                             <?php if(!empty($this->session->flashdata("warning"))) { ?>
                                 <div class="alert alert-danger" role="alert">
                                     <?=$this->session->flashdata("warning")?>
                                 </div>
                             <?php ;} ?>
+                            <img src="<?=$image?>LogoAlNoor.png" class="img-fluid mb-4" alt="">
                             <form action="<?=site_url('admin/login')?>" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="email" id=""  placeholder="Email" required>
