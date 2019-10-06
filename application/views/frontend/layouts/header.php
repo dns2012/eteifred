@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="<?=$plugin?>animate/animate.css">
     <link rel="stylesheet" href="<?=$plugin?>themify-icon/themify-icons.css">
     <link rel="stylesheet" href="<?=$plugin?>fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="<?=$css?>theme.css">
+    <link rel="stylesheet" href="<?=$css?>theme.css?v=1">
     <!-- End Source CSS We Use -->
 
     <link rel='shortcut icon' type='image/png' href='<?=$image?>favicon.png' />
