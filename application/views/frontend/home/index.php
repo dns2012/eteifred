@@ -6,8 +6,11 @@
                     <?php foreach($banner as $banner) : ?>
                     <div class="item">
                         <img src="<?=$cdnBanner.$banner->image?>" class="image">
-                        <div class="text text-center">
-                            <h2><?=$banner->title?></h2>
+                        <div class="text text-center mt-5">
+                            <img src="<?=$image?>LogoAlNoor-white-circle.png" style="width: 20%; margin: auto;" alt="">
+                            <h2>
+                                <?= strtoupper($banner->title)?>
+                            </h2>
                             <p>
                                 <span>
                                     <?=$banner->description?>
