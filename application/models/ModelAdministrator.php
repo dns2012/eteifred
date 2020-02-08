@@ -1,6 +1,6 @@
 <?php 
 class ModelAdministrator extends CI_Model {
-    protected $table = "administrator";
+    protected $table = "admin";
 
     function getAll() {
         return $this->db->get($this->table)->result();
@@ -25,8 +25,8 @@ class ModelAdministrator extends CI_Model {
         $this->db->delete($this->table);
     }
 
-    function getByEmail($email=0) {
-        $this->db->where('email', $email);
+    function getByUsername($email=0) {
+        $this->db->where('username', $email);
         return $this->db->get($this->table)->row();
     }
     

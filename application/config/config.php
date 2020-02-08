@@ -31,8 +31,10 @@ $config['base_url'] = $baseUrl;
 
 $config['cssBackend'] = $config['base_url'].'assets/backend/css/';
 $config['jsBackend'] = $config['base_url'].'assets/backend/js/';
-$config['imageBackend'] = $config['base_url'].'assets/backend/image/';
-$config['pluginBackend'] = $config['base_url'].'assets/backend/plugin/';
+$config['imagesBackend'] = $config['base_url'].'assets/backend/images/';
+$config['vendorsBackend'] = $config['base_url'].'assets/backend/vendors/';
+
+
 $config['cdnAdminBackend'] = $config['base_url'].'public/admin/';
 $config['uploadAdminBackend'] = FCPATH.'public/admin/';
 $config['cdnBannerBackend'] = $config['base_url'].'public/banner/';

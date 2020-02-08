@@ -12,17 +12,17 @@ class Auth extends CI_Controller {
 
     public function login() {
         $post = $this->security->xss_clean($this->input->post());
-        $checkEmail = $this->ModelAdministrator->getByEmail($post["email"]);
-        if(!empty($checkEmail)) {
-            if (password_verify($post["password"], $checkEmail->password)) {
-                $arraySession = array(
-                    "userId"    =>  $checkEmail->id,
-                    "name"      =>  $checkEmail->name,
-                    "email"     =>  $checkEmail->email,
-                    "image"     =>  $checkEmail->image,
-                    "role"      =>  $checkEmail->role
-                );
-                $this->session->set_userdata($arraySession);
+        $check_email = $this->ModelAdministrator->getByUsername($post["username"]);
+        
+        if(! empty($check_email)) {
+            $password = md5($post['password']);
+
+            if ($password == $check_email->password) {
+                $this->session->set_userdata([
+                    "userId"    =>  $check_email->id,
+                    "name"      =>  $check_email->display_name,
+                    "username"     =>  $check_email->username
+                ]);
                 redirect("admin/dashboard");
             } else {
                 $this->session->set_flashdata("warning", "Wrong password");
