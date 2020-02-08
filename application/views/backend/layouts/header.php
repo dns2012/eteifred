@@ -38,7 +38,7 @@ $vendors = $this->config->item("vendorsBackend");
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="<?= $images ?>logo.svg" class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="<?= $images ?>logo-derfiete.jpeg" class="mr-2" alt="logo" /></a>
                 <a class="navbar-brand brand-logo-mini" href="index.html"><img src="<?= $images ?>logo-mini.svg" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -196,16 +196,18 @@ $vendors = $this->config->item("vendorsBackend");
                         </a>
                     </li>
 
-                    <li class="nav-item <?= (in_array($page, ['tyre-brand', 'tyre'])) ? 'active' : '' ?>">
+                    <li class="nav-item <?= (in_array($page, ['tyre-brand', 'tyre', 'tyre-history', 'tyre-action'])) ? 'active' : '' ?>">
                         <a class="nav-link" data-toggle="collapse" href="#tyre" aria-expanded="false" aria-controls="auth">
                             <i class="ti-wheelchair menu-icon"></i>
                             <span class="menu-title">Tyre</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse <?= (in_array($page, ['tyre-brand', 'tyre'])) ? 'show' : '' ?>" id="tyre">
+                        <div class="collapse <?= (in_array($page, ['tyre-brand', 'tyre', 'tyre-history', 'tyre-action'])) ? 'show' : '' ?>" id="tyre">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre') ? 'active' : '' ?>" href="<?= site_url('admin/tyre') ?>"> All </a></li>
                                 <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre-brand') ? 'active' : '' ?>" href="<?= site_url('admin/tyre-brand') ?>"> Brand </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre-history') ? 'active' : '' ?>" href="<?= site_url('admin/tyre-history') ?>"> History </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre-action') ? 'active' : '' ?>" href="<?= site_url('admin/tyre-action') ?>"> Action </a></li>
                             </ul>
                         </div>
                     </li>

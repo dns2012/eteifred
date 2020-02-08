@@ -96,4 +96,10 @@ class Tyre extends CI_Controller {
         $this->ModelTyre->delete($id);
         redirect("admin/tyre");
     }
+
+    public function getTyreByProject($id=0) {
+        $this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($this->ModelTyre->getByProject($id)));
+    }
 }

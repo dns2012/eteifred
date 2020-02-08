@@ -82,6 +82,18 @@ $route['admin/tyre/form/(:num)'] = 'backend/Tyre/form/$1';
 $route['admin/tyre/form/action/(:num)'] = 'backend/Tyre/formAction/$1';
 $route['admin/tyre/delete/(:num)'] = 'backend/Tyre/delete/$1';
 
+$route['admin/tyre-history'] = 'backend/TyreHistory/index';
+$route['admin/tyre-history/form/(:num)'] = 'backend/TyreHistory/form/$1';
+$route['admin/tyre-history/form/action/(:num)'] = 'backend/TyreHistory/formAction/$1';
+$route['admin/tyre-history/delete/(:num)'] = 'backend/TyreHistory/delete/$1';
+
+$route['admin/tyre-action'] = 'backend/TyreAction/index';
+$route['admin/tyre-action-page'] = 'backend/TyreAction/actionPage';
+$route['admin/tyre-action/form/action'] = 'backend/TyreAction/actionForm';
+
+
+$route['admin/api/tyre/project/(:num)'] = 'backend/Tyre/getTyreByProject/$1';
+
 // $route['admin/self/(:num)'] = 'backend/administrator/formSelf/$1';
 // $route['admin/self/action/(:num)'] = 'backend/administrator/formSelfAction/$1';
 // $route['admin/self/password/(:num)'] = 'backend/administrator/formSelfPassword/$1';
