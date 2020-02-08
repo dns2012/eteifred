@@ -14,10 +14,14 @@
                                 <th>Serial</th>
                                 <th>Project</th>
                                 <th>Project Vehicle</th>
-                                <th>Vehicle</th>
-                                <th>Status</th>
+                                <th>Installed At</th>
+                                <th>Removed At</th>
+                                <th>Repaired At</th>
+                                <th>Finish At</th>
+                                <th>Position</th>
+                                <th>Distance Start</th>
+                                <th>Distance End</th>
                                 <th>Updated At</th>
-                                <!-- <th></th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -25,9 +29,14 @@
                                 <tr>
                                     <td><?= $tyre_history->serial ?></td>
                                     <td><?= $tyre_history->project_name ?></td>
-                                    <td><?= $tyre_history->project_vehicle_name ?></td>
-                                    <td><?= $tyre_history->vehicle_name .' - '.$tyre_history->vehicle_type ?></td>
-                                    <td><label class="badge badge-success"><?= $tyre_history->status ?></label></td>
+                                    <td><?= $tyre_history->project_vehicle_name ?> <br> <?= $tyre_history->vehicle_name .' - '.$tyre_history->vehicle_type ?></td>
+                                    <td><?= (!empty($tyre_history->installed_date)) ? $tyre_history->installed_date : '-' ?></td>
+                                    <td><?= (!empty($tyre_history->removal_date)) ? $tyre_history->removal_date : '-' ?></td>
+                                    <td><?= (!empty($tyre_history->repair_date)) ? $tyre_history->repair_date : '-' ?></td>
+                                    <td><?= (!empty($tyre_history->repair_finish_date)) ? $tyre_history->repair_finish_date : '-' ?></td>
+                                    <td><?= (!empty($tyre_history->position)) ? $tyre_history->position : '-' ?></td>
+                                    <td><?= (!empty($tyre_history->distance_start_value)) ? $tyre_history->distance_start_value : 0 ?> m</td>
+                                    <td><?= (!empty($tyre_history->distance_end_value)) ? $tyre_history->distance_end_value : 0 ?> m</td>
                                     <td><label class="badge badge-warning"><?= $tyre_history->updated_at ?></label></td>
                                     <!-- <td>
                                         <a href="<?= site_url('admin/tyre-history/form/' . $tyre_history->id) ?>" class="btn btn-success">EDIT</a>
