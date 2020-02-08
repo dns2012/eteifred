@@ -46,10 +46,10 @@
     </div>
 
     <div class="form-group control">
-        <button type="button" class="btn new btn-primary <?= (in_array($tyre->status, ['New', 'Free'])) ? '' : 'disabled' ?>">INSTALL</button>
-        <button type="button" class="btn installed btn-primary <?= (in_array($tyre->status, ['Installed'])) ? '' : 'disabled' ?>">REMOVE</button>
-        <button type="button" class="btn removed btn-primary <?= (in_array($tyre->status, ['Removed'])) ? '' : 'disabled' ?>">REPAIR</button>
-        <button type="button" class="btn repair btn-primary <?= (in_array($tyre->status, ['Repair'])) ? '' : 'disabled' ?>">FINISH REPAIR</button>
+        <button type="button" class="btn new btn-primary" <?= (in_array($tyre->status, ['New', 'Free'])) ? '' : 'disabled' ?>>INSTALL</button>
+        <button type="button" class="btn installed btn-primary" <?= (in_array($tyre->status, ['Installed'])) ? '' : 'disabled' ?>>REMOVE</button>
+        <button type="button" class="btn removed btn-primary" <?= (in_array($tyre->status, ['Removed'])) ? '' : 'disabled' ?>>REPAIR</button>
+        <button type="button" class="btn repair btn-primary" <?= (in_array($tyre->status, ['Repair'])) ? '' : 'disabled' ?>>FINISH REPAIR</button>
         <!-- <button type="button" class="btn btn-danger">SCRAP</button> -->
     </div>
 </form>

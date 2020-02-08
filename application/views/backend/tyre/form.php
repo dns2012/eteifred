@@ -64,9 +64,9 @@
                         <label>Image</label> <br>
                         <?php if (!empty($tyre->image)) { ?>
                             <img src="<?= $tyre->image ?>" alt="image-tyre" srcset="">
+                            <input type="hidden" name="image" value="<?= $tyre->image ?>">
                         <?php ;} ?>
                         <input type="file" class="form-control" name="image">
-                        <input type="hidden" name="image" value="<?= $tyre->image ?>">
                     </div>
                     <div class="form-group">
                         <label>Total Hour</label>
