@@ -86,6 +86,7 @@ $route['admin/tyre-history'] = 'backend/TyreHistory/index';
 $route['admin/tyre-history/form/(:num)'] = 'backend/TyreHistory/form/$1';
 $route['admin/tyre-history/form/action/(:num)'] = 'backend/TyreHistory/formAction/$1';
 $route['admin/tyre-history/delete/(:num)'] = 'backend/TyreHistory/delete/$1';
+$route['admin/tyre-history/list-detail/(:num)'] = 'backend/TyreHistory/listDetail/$1';
 
 $route['admin/tyre-action'] = 'backend/TyreAction/index';
 $route['admin/tyre-action-page'] = 'backend/TyreAction/actionPage';

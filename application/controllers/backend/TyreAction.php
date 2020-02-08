@@ -84,5 +84,7 @@ class TyreAction extends CI_Controller {
 
             $this->ModelTyreHistory->update($arrayTireHistory, $post['id']);
         }
+
+        echo $post['tyre'];
     }
 }

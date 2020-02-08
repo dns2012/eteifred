@@ -133,7 +133,7 @@ $(document).ready(function() {
             url : 'tyre-action/form/action',
             data : form,
             success : function(data) {
-                window.location = "<?= site_url('admin/tyre-history')?>"
+                window.location = "<?= site_url('admin/tyre-history/list-detail/')?>" + data
             }
         })
     })

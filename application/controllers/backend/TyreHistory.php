@@ -16,6 +16,12 @@ class TyreHistory extends CI_Controller {
         $this->load->view("backend/tyre_history/index", $data);
     }
 
+    public function listDetail($id=0) {
+        $data["page"] = "tyre-history";
+        $data["tyre_history"] = $this->ModelTyreHistory->getListHistoryByTyreId($id);
+        $this->load->view("backend/tyre_history/list_history", $data);
+    }
+
     public function form($id=0) {
         $data["page"] = "tyre-history";
         $data["id"] = $id;

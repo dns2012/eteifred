@@ -15,6 +15,20 @@ class ModelTyreHistory extends CI_Model {
         return $this->db->get($this->table)->result();
     }
 
+    function getListHistoryByTyreId($id=0) {
+        $this->db->select('tyre_history.*, tyre.serial, tyre.status, project.name as project_name,
+        project_vehicle.name as project_vehicle_name, vehicle.type as vehicle_type,
+        vehicle_brand.name as vehicle_name');
+        $this->db->join('tyre', 'tyre.id = tyre_history.tyre_id', 'left');
+        $this->db->join('project_vehicle', 'project_vehicle.id = tyre_history.project_vehicle_id', 'left');
+        $this->db->join('project', 'project.id = project_vehicle.project_id', 'left');
+        $this->db->join('vehicle', 'vehicle.id = project_vehicle.vehicle_id', 'left');
+        $this->db->join('vehicle_brand', 'vehicle_brand.id = vehicle.vehicle_brand_id', 'left');
+        $this->db->where('tyre_history.tyre_id', $id);
+        $this->db->order_by('tyre_history.updated_at', 'DESC');
+        return $this->db->get($this->table)->result();
+    }
+
     function getById($id=0) {
         $this->db->where('id', $id);
         return $this->db->get($this->table)->row();
