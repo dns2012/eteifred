@@ -160,7 +160,7 @@ $vendors = $this->config->item("vendorsBackend");
                                 <i class="ti-settings text-primary"></i>
                                 Settings
                             </a>
-                            <a href="<?= site_url('admin/logout')?>" class="dropdown-item">
+                            <a href="<?= site_url('admin/logout') ?>" class="dropdown-item">
                                 <i class="ti-power-off text-primary"></i>
                                 Logout
                             </a>
@@ -177,23 +177,37 @@ $vendors = $this->config->item("vendorsBackend");
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                    <li class="nav-item <?= ($page == 'dashboard') ? 'active' : ''?>">
+                    <li class="nav-item <?= ($page == 'dashboard') ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= site_url('admin/dashboard') ?>">
                             <i class="ti-home menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item <?= ($page == 'client-type') ? 'active' : ''?>">
+                    <li class="nav-item <?= ($page == 'client-type') ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= site_url('admin/client-type') ?>">
                             <i class="ti-tag menu-icon"></i>
                             <span class="menu-title">Client Type</span>
                         </a>
                     </li>
-                    <li class="nav-item <?= ($page == 'client') ? 'active' : ''?>">
+                    <li class="nav-item <?= ($page == 'client') ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= site_url('admin/client') ?>">
                             <i class="ti-user menu-icon"></i>
                             <span class="menu-title">Client</span>
                         </a>
+                    </li>
+
+                    <li class="nav-item <?= (in_array($page, ['tyre-brand', 'tyre'])) ? 'active' : '' ?>">
+                        <a class="nav-link" data-toggle="collapse" href="#tyre" aria-expanded="false" aria-controls="auth">
+                            <i class="ti-wheelchair menu-icon"></i>
+                            <span class="menu-title">Tyre</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse <?= (in_array($page, ['tyre-brand', 'tyre'])) ? 'show' : '' ?>" id="tyre">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre') ? 'active' : '' ?>" href="<?= site_url('admin/tyre') ?>"> All </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre-brand') ? 'active' : '' ?>" href="<?= site_url('admin/tyre-brand') ?>"> Brand </a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>

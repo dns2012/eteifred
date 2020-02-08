@@ -5,7 +5,7 @@
             <div class="card-body">
                 <h4 class="card-title">Client</h4>
                 <div class="card-description">
-                    <a href="<?= site_url('admin/client/form/0') ?>" class="btn btn-primary">TAMBAH</a>
+                    <a href="<?= site_url('admin/client/form/0') ?>" class="btn btn-primary">ADD ITEM</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table">
@@ -24,10 +24,10 @@
                                     <td><?= $client->code ?></td>
                                     <td><?= $client->name ?></td>
                                     <td><?= $client->client_type_name ?></td>
-                                    <td><label class="badge badge-danger"><?= $client->created_at ?></label></td>
+                                    <td><label class="badge badge-warning"><?= $client->created_at ?></label></td>
                                     <td>
                                         <a href="<?= site_url('admin/client/form/' . $client->id) ?>" class="btn btn-success">EDIT</a>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?= $index ?>">HAPUS</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?= $index ?>">DELETE</button>
                                     </td>
                                 </tr>
                                 <div class="modal fade" id="deleteModal<?= $index ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

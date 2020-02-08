@@ -31,22 +31,24 @@ class ClientType extends CI_Controller {
     public function formAction($id=0) {
         $post = $this->security->xss_clean($this->input->post());
         if($id == 0) {
-            $array = array(
+            $this->form_validation->set_rules('code', 'Code', 'is_unique[client_type.code]');
+            if ($this->form_validation->run() == FALSE) {
+                $this->session->set_flashdata('warning', validation_errors());
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+
+            $this->ModelClientType->add([
                 "code"  =>  $post["code"],
                 "name"  =>  $post["name"],
-                "description" =>  $post["description"],
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s")
-            );
-            $this->ModelClientType->add($array);
+                "description" =>  $post["description"]
+            ]);
         } else {
-            $array = array(
+            $this->ModelClientType->update([
                 "code"  =>  $post["code"],
                 "name"  =>  $post["name"],
                 "description" =>  $post["description"],
                 "updated_at" => date("Y-m-d H:i:s")
-            );
-            $this->ModelClientType->update($array, $id);
+            ], $id);
         }
         redirect("admin/client-type");
     }

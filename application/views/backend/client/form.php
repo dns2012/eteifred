@@ -24,7 +24,7 @@
                         <label>Client Type</label>
                         <select name="client_type_id" class="form-control">
                             <?php foreach ($client_type as $index => $client_type) : ?>
-                                <option value="<?= $client_type->id ?>" <?= (!empty($client->client_type_id) ? ($client_type->id == $client->client_type_id) ? 'selected' : '' : '') ?>><?= $client_type->name ?></option>
+                                <option value="<?= $client_type->id ?>" <?= (!empty($client) ? ($client_type->id == $client->client_type_id) ? 'selected' : '' : '') ?>><?= $client_type->name ?></option>
                             <?php endforeach ?>
                         </select>
                     </div>

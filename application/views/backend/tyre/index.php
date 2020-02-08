@@ -3,30 +3,30 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Client Type</h4>
+                <h4 class="card-title">Tyre</h4>
                 <div class="card-description">
-                    <a href="<?= site_url('admin/client-type/form/0') ?>" class="btn btn-primary">ADD ITEM</a>
+                    <a href="<?= site_url('admin/tyre/form/0') ?>" class="btn btn-primary">ADD ITEM</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th>Description</th>
+                                <th>Serial</th>
+                                <th>Status</th>
+                                <th>Type</th>
                                 <th>Created At</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($client_type as $index => $client_type) : ?>
+                            <?php foreach ($tyre as $index => $tyre) : ?>
                                 <tr>
-                                    <td><?= $client_type->code ?></td>
-                                    <td><?= $client_type->name ?></td>
-                                    <td><?= $client_type->description ?></td>
-                                    <td><label class="badge badge-warning"><?= $client_type->created_at ?></label></td>
+                                    <td><?= $tyre->serial ?></td>
+                                    <td><label class="badge badge-success"><?= $tyre->status ?></label></td>
+                                    <td><?= $tyre->type ?></td>
+                                    <td><label class="badge badge-warning"><?= $tyre->created_at ?></label></td>
                                     <td>
-                                        <a href="<?= site_url('admin/client-type/form/' . $client_type->id) ?>" class="btn btn-success">EDIT</a>
+                                        <a href="<?= site_url('admin/tyre/form/' . $tyre->id) ?>" class="btn btn-success">EDIT</a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?= $index ?>">DELETE</button>
                                     </td>
                                 </tr>
@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
-                                                <a href="<?= site_url('admin/client-type/delete/' . $client_type->id) ?>" class="btn btn-primary">
+                                                <a href="<?= site_url('admin/tyre/delete/' . $tyre->id) ?>" class="btn btn-primary">
                                                     DELETE
                                                 </a>
                                             </div>

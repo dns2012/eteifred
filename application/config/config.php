@@ -34,23 +34,8 @@ $config['jsBackend'] = $config['base_url'].'assets/backend/js/';
 $config['imagesBackend'] = $config['base_url'].'assets/backend/images/';
 $config['vendorsBackend'] = $config['base_url'].'assets/backend/vendors/';
 
-
-$config['cdnAdminBackend'] = $config['base_url'].'public/admin/';
-$config['uploadAdminBackend'] = FCPATH.'public/admin/';
-$config['cdnBannerBackend'] = $config['base_url'].'public/banner/';
-$config['uploadBannerBackend'] = FCPATH.'public/banner/';
-$config['cdnProductBackend'] = $config['base_url'].'public/product/';
-$config['uploadProductBackend'] = FCPATH.'public/product/';
-$config['cdnServiceBackend'] = $config['base_url'].'public/service/';
-$config['uploadServiceBackend'] = FCPATH.'public/service/';
-$config['cdnTestimonialBackend'] = $config['base_url'].'public/testimonial/';
-$config['uploadTestimonialBackend'] = FCPATH.'public/testimonial/';
-$config['cdnGalleryBackend'] = $config['base_url'].'public/gallery/';
-$config['uploadGalleryBackend'] = FCPATH.'public/gallery/';
-$config['cdnLogoBackend'] = $config['base_url'].'public/logo/';
-$config['uploadLogoBackend'] = FCPATH.'public/logo/';
-$config['cdnAboutBackend'] = $config['base_url'].'public/about/';
-$config['uploadAboutBackend'] = FCPATH.'public/about/';
+$config['cdnTyreBackend'] = $config['base_url'].'public/tyre/';
+$config['uploadTyreBackend'] = FCPATH.'public/tyre/';
 
 $config['cssFrontend'] = $config['base_url'].'assets/frontend/css/';
 $config['jsFrontend'] = $config['base_url'].'assets/frontend/js/';

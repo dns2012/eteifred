@@ -9,8 +9,6 @@ class Client extends CI_Controller {
         }
         $this->load->model("ModelClient");
         $this->load->model("ModelClientType");
-
-        $this->load->library('form_validation');
     }
 
     public function index() {
@@ -41,24 +39,20 @@ class Client extends CI_Controller {
                 redirect($_SERVER['HTTP_REFERER']);
             }
 
-            $array = array(
+            $this->ModelClient->add([
                 "code"  =>  $post["code"],
                 "name"  =>  $post["name"],
                 "client_type_id" =>  $post["client_type_id"],
-                "country" => $post["country"],
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s")
-            );
-            $this->ModelClient->add($array);
+                "country" => $post["country"]
+            ]);
         } else {
-            $array = array(
+            $this->ModelClient->update([
                 "code"  =>  $post["code"],
                 "name"  =>  $post["name"],
                 "client_type_id" =>  $post["client_type_id"],
                 "country" => $post["country"],
                 "updated_at" => date("Y-m-d H:i:s")
-            );
-            $this->ModelClient->update($array, $id);
+            ], $id);
         }
         redirect("admin/client");
     }

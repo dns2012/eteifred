@@ -72,6 +72,15 @@ $route['admin/client/form/(:num)'] = 'backend/Client/form/$1';
 $route['admin/client/form/action/(:num)'] = 'backend/Client/formAction/$1';
 $route['admin/client/delete/(:num)'] = 'backend/Client/delete/$1';
 
+$route['admin/tyre-brand'] = 'backend/TyreBrand/index';
+$route['admin/tyre-brand/form/(:num)'] = 'backend/TyreBrand/form/$1';
+$route['admin/tyre-brand/form/action/(:num)'] = 'backend/TyreBrand/formAction/$1';
+$route['admin/tyre-brand/delete/(:num)'] = 'backend/TyreBrand/delete/$1';
+
+$route['admin/tyre'] = 'backend/Tyre/index';
+$route['admin/tyre/form/(:num)'] = 'backend/Tyre/form/$1';
+$route['admin/tyre/form/action/(:num)'] = 'backend/Tyre/formAction/$1';
+$route['admin/tyre/delete/(:num)'] = 'backend/Tyre/delete/$1';
 
 // $route['admin/self/(:num)'] = 'backend/administrator/formSelf/$1';
 // $route['admin/self/action/(:num)'] = 'backend/administrator/formSelfAction/$1';
