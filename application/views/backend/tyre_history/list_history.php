@@ -11,7 +11,7 @@
                         <select name="tyre" class="form-control">
                             <option value="">Choose Tyre</option>
                             <?php foreach($tyre as $index => $tyre_option) { ?>
-                                <option value="<?= $tyre_option->id ?>" <?= ($tyre_history[0]->tyre_id == $tyre_option->id) ? 'selected' : '' ?>><?= $tyre_option->serial ?></option>
+                                <option value="<?= $tyre_option->id ?>" <?= (!empty($tyre_history[0]->tyre_id) ? ($tyre_history[0]->tyre_id == $tyre_option->id) ? 'selected' : '' : '') ?>><?= $tyre_option->serial ?></option>
                             <?php ;} ?>
                         </select>
                     </div>
