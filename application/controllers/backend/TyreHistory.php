@@ -7,18 +7,21 @@ class TyreHistory extends CI_Controller {
             $this->session->set_flashdata("warning", "You must login first");
             redirect("admin");
         }
+        $this->load->model("ModelTyre");
         $this->load->model("ModelTyreHistory");
     }
 
     public function index() {
         $data["page"] = "tyre-history";
         $data["tyre_history"] = $this->ModelTyreHistory->getAll();
+        $data["tyre"] = $this->ModelTyre->getAll();
         $this->load->view("backend/tyre_history/index", $data);
     }
 
     public function listDetail($id=0) {
         $data["page"] = "tyre-history";
         $data["tyre_history"] = $this->ModelTyreHistory->getListHistoryByTyreId($id);
+        $data["tyre"] = $this->ModelTyre->getAll();
         $this->load->view("backend/tyre_history/list_history", $data);
     }
 

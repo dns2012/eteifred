@@ -7,7 +7,17 @@
                 <!-- <div class="card-description">
                     <a href="<?= site_url('admin/tyre-history/form/0') ?>" class="btn btn-primary">ADD ITEM</a>
                 </div> -->
-                <div class="table-responsive">
+                <div class="row">
+                    <div class="col-md-3">
+                        <select name="tyre" class="form-control">
+                            <option value="">Choose Tyre</option>
+                            <?php foreach($tyre as $index => $tyre_option) { ?>
+                                <option value="<?= $tyre_option->id ?>"><?= $tyre_option->serial ?></option>
+                            <?php ;} ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-responsive mt-3">
                     <table class="table">
                         <thead>
                             <tr>
@@ -73,3 +83,11 @@
     </div>
 </div>
 <?php include_once dirname(__FILE__) . '/../layouts/footer.php'; ?>
+
+<script>
+$(document).ready(function() {
+    $('[name=tyre]').change(function() {
+        window.location = "<?= site_url('admin/tyre-history/list-detail/')?>" + $(this).val();
+    })
+})
+</script>
