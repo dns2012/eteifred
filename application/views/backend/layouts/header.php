@@ -183,7 +183,48 @@ $vendors = $this->config->item("vendorsBackend");
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item <?= ($page == 'client-type') ? 'active' : '' ?>">
+
+                    <li class="nav-item <?= (in_array($page, [''])) ? 'active' : '' ?>">
+                        <a class="nav-link" data-toggle="collapse" href="#general" aria-expanded="false" aria-controls="auth">
+                            <i class="ti-file menu-icon"></i>
+                            <span class="menu-title">General Data</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse <?= (in_array($page, ['client', 'tyre-brand'])) ? 'show' : '' ?>" id="general">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link <?= ($page == 'client') ? 'active' : '' ?>" href="<?= site_url('admin/client') ?>"> Client </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre-brand') ? 'active' : '' ?>" href="<?= site_url('admin/tyre-brand') ?>"> Brand </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == '') ? 'active' : '' ?>" href=#"> Size </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == '') ? 'active' : '' ?>" href=#"> Failure Code </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == '') ? 'active' : '' ?>" href=#"> Status Code </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == '') ? 'active' : '' ?>" href=#"> Vehicle Tipe </a></li>
+                                <li class="nav-item"> <a class="nav-link <?= ($page == '') ? 'active' : '' ?>" href=#"> Vehicle </a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item <?= ($page == 'tyre-action') ? 'active' : '' ?>">
+                        <a class="nav-link" href="<?= site_url('admin/tyre-action') ?>">
+                            <i class="ti-panel menu-icon"></i>
+                            <span class="menu-title">Action</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item <?= ($page == '') ? 'active' : '' ?>">
+                        <a class="nav-link" href="#">
+                            <i class="ti-shine menu-icon"></i>
+                            <span class="menu-title">Queries</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item <?= ($page == 'tyre-history') ? 'active' : '' ?>">
+                        <a class="nav-link" href="<?= site_url('admin/tyre-history') ?>">
+                            <i class="ti-list menu-icon"></i>
+                            <span class="menu-title">Report</span>
+                        </a>
+                    </li>
+
+                    <!-- <li class="nav-item <?= ($page == 'client-type') ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= site_url('admin/client-type') ?>">
                             <i class="ti-tag menu-icon"></i>
                             <span class="menu-title">Client Type</span>
@@ -194,9 +235,9 @@ $vendors = $this->config->item("vendorsBackend");
                             <i class="ti-user menu-icon"></i>
                             <span class="menu-title">Client</span>
                         </a>
-                    </li>
+                    </li> -->
 
-                    <li class="nav-item <?= (in_array($page, ['tyre-brand', 'tyre', 'tyre-history', 'tyre-action'])) ? 'active' : '' ?>">
+                    <!-- <li class="nav-item <?= (in_array($page, ['tyre-brand', 'tyre', 'tyre-history', 'tyre-action'])) ? 'active' : '' ?>">
                         <a class="nav-link" data-toggle="collapse" href="#tyre" aria-expanded="false" aria-controls="auth">
                             <i class="ti-wheelchair menu-icon"></i>
                             <span class="menu-title">Tyre</span>
@@ -210,7 +251,7 @@ $vendors = $this->config->item("vendorsBackend");
                                 <li class="nav-item"> <a class="nav-link <?= ($page == 'tyre-action') ? 'active' : '' ?>" href="<?= site_url('admin/tyre-action') ?>"> Action </a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
             <!-- MAIN PANEL -->
